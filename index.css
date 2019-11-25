@@ -1,8 +1,52 @@
-.blog_snippet {
-    background-color: blue;
+body {
+    background-color: lightblue;
 }
 
 .jumbotron {
-    display:flex;
+    display: flex;
+    justify-content: center;
+    padding-top: 140px;
 }
 
+.jumbo_container {
+    display: flex;
+    flex-direction: column;
+    /* border: 2px solid black; */
+    align-items: center;
+}
+
+.blog_post_p {
+    overflow: hidden; /* elipsis */
+    white-space: nowrap; /* elipsis */
+    text-overflow: ellipsis; /*  elipsis */
+}
+
+.blog_post {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    padding: 30px;
+    margin-bottom: 40px; /* space between different blog posts */
+}
+
+a:hover {
+    text-decoration: none; /* removes underline when hovering over links */
+    color: pink;
+}
+
+a {
+    text-decoration: none;
+    color: #212529;
+}
+
+.emoji_box {
+    display: flex;
+    justify-content: flex-end;
+    background-color: grey;
+    width: 20%;
+}
+
+.emoji_div {
+    display: flex;
+    justify-content: flex-end;
+}
