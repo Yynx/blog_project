@@ -39,14 +39,15 @@ a {
     color: #212529;
 }
 
-.emoji_box {
+.likes_and_emoji_div {
     display: flex;
     justify-content: flex-end;
-    background-color: grey;
-    width: 20%;
 }
 
-.emoji_div {
-    display: flex;
-    justify-content: flex-end;
+.emoji_box {
+    background-color: green;
+}
+
+.likes_box {
+    background-color: purple;
 }
