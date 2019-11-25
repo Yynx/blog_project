@@ -23,3 +23,12 @@ form {
 button {
     margin: auto;
 }
+
+#input_blog_author {
+    width: 50%;
+}
+
+#gif_box {
+    height: 200px;
+    border: 2px solid blue;
+}
