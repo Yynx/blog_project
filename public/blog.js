@@ -1,12 +1,12 @@
 $(document).ready(() => {
     console.log("Page Ready.")
-    
+
     //Logs current blog data
     $.getJSON("blogs.json", function (data) {
-        let dataJson = JSON.stringify(data);
-        console.log('DAta' + dataJson);
+        let testId = data.length - 1;
+        $('#formOutput').html(`Title: ${data[testId].title} 
+         Author: ${data[testId].author}
+         Content: ${data[testId].content}`);
     });
 
-    // $('#formOutput').html(`Title: ${jsonFormData.title} 
-    // Content: ${jsonFormData.content}`);
 });

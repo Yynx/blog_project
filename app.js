@@ -12,14 +12,52 @@ app.use(express.static('views'));
 app.use(express.urlencoded());
 
 
+class Comment {
+    constructor(id, content, author) {
+        this.content = content;
+        if (author)
+            this.author = author;
+        else
+            author = "anonymous";
+    }
+}
+class BlogPost {
+    constructor(id, title, content, author) {
+        this.id = id;
+        this.title = title;
+        this.content = content;
+        if (author)
+            this.author = author;
+        else
+            author = "anonymous";
+        this.comments = [];
+        this.reactions = [0, 0, 0];
+    }
+
+    addComment(comment, author) {
+        this.comments.push(new Comment(comment, author));
+    }
+}
+
+
+
 //saves new json object to array
 const saveJson = (jsonObj) => {
     fs.readFile('public/blogs.json', (err, data) => {
         if (err) throw err;
-        let testData = JSON.parse(data);
-        testData.push(jsonObj);
-        tDJson = JSON.stringify(testData);
-        fs.writeFile("public/blogs.json", tDJson, () => {
+        let jsonArray;
+        try {
+            jsonArray = JSON.parse(data);
+        }
+        catch (err) {
+            console.log(err);
+            //unexpected end of json input due to empty json file
+            jsonArray = [];
+        }
+        jsonObj.id = jsonArray.length + 1;
+        jsonArray.push(jsonObj);
+        newJsonArray = JSON.stringify(jsonArray);
+        fs.writeFile("public/blogs.json", newJsonArray, () => {
         });
     });
 }
@@ -33,8 +71,14 @@ app.get('/', (req, res) => {
 app.post('/submit', (req, res) => {
     let title = req.body.title;
     let content = req.body.content;
-    let data = { title: title, content: content };
-    saveJson(data);
+    let author = req.body.author;
+    let newPost = new BlogPost(
+        1,
+        title,
+        content,
+        author
+    );
+    saveJson(newPost);
     res.redirect('/');
 });
 

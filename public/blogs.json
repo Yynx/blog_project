@@ -1,1 +1,1 @@
-[{"fake":"stuff"},{"data":"test2"},{"data":"test2"},{"data":"test2"},{"title":"TitleHi","content":"Remove"},{"title":"PAss","content":"Data"}]
+[{"id":1,"title":"Title","content":"content","author":"author","comments":[],"reactions":[0,0,0]},{"id":2,"title":"Title","content":"content","author":"author","comments":[],"reactions":[0,0,0]}]
