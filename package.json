@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Yynx/blog_project#readme",
   "dependencies": {
+    "ejs": "^3.0.1",
     "express": "^4.17.1",
     "fs": "0.0.1-security"
   }
