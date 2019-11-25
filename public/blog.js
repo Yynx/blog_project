@@ -8,5 +8,10 @@ $(document).ready(() => {
          Author: ${data[testId].author}
          Content: ${data[testId].content}`);
     });
-
+    axios.get('/specific/2').then((response, ) => {
+        blog = response.data;
+        let strungData = JSON.stringify(blog);
+        console.log(strungData);
+        $('#formOutput').html(strungData);
+    });
 });

@@ -67,6 +67,20 @@ app.get('/', (req, res) => {
     res.render('blog.html');
 });
 
+app.get('/specific/:index', (req, res) => {
+    let index = req.params.index;
+    fs.readFile('public/blogs.json', (err, data) => {
+        if (err) throw err;
+        let jsonArray = JSON.parse(data);
+        if (index > 0 && index <= jsonArray.length) {
+            res.send(jsonArray[index - 1])
+        }
+        else {
+            res.send(`Choose index between 1 and ${jsonArray.length}`)
+        }
+    });
+});
+
 //when form data is submitted
 app.post('/submit', (req, res) => {
     let title = req.body.title;
