@@ -20,6 +20,6 @@ form {
     flex-direction: column;
 }
 
-button {
+.submit_button {
     margin: auto;
 }
