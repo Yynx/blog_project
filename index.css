@@ -8,20 +8,20 @@ body {
     padding-top: 140px;
 }
 
-.jumbo_container {
+.jumboContainer {
     display: flex;
     flex-direction: column;
     /* border: 2px solid black; */
     align-items: center;
 }
 
-.blog_post_p {
+.blogPostP {
     overflow: hidden; /* elipsis */
     white-space: nowrap; /* elipsis */
     text-overflow: ellipsis; /*  elipsis */
 }
 
-.blog_post {
+.blogPost {
     display: flex;
     flex-direction: column;
     border: 1px solid black;
@@ -39,15 +39,15 @@ a {
     color: #212529;
 }
 
-.likes_and_emoji_div {
+.likesAndEmojiDiv {
     display: flex;
     justify-content: flex-end;
 }
 
-.emoji_box {
+.emojiBox {
     background-color: green;
 }
 
-.likes_box {
+.likesBox {
     background-color: purple;
 }
