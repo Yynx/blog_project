@@ -1,0 +1,21 @@
+body {
+    background-color: lightblue;
+}
+
+.jumbotron {
+    display: flex;
+    justify-content: center;
+    padding-top: 140px;
+}
+
+.jumboContainer {
+    display: flex;
+    flex-direction: column;
+    /* border: 2px solid black; */
+    align-items: center;
+}
+
+#blogContainer {
+    display: flex;
+    justify-content: center;
+}

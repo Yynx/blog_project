@@ -1,0 +1,34 @@
+body {
+    background-color: lightblue;
+}
+
+.jumbotron {
+    display: flex;
+    justify-content: center;
+    padding-top: 140px;
+}
+
+.jumbo_container {
+    display: flex;
+    flex-direction: column;
+    /* border: 2px solid black; */
+    align-items: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.submit_button {
+    margin: auto;
+}
+
+#input_blog_author {
+    width: 50%;
+}
+
+#gif_box {
+    height: 200px;
+    border: 2px solid blue;
+}
