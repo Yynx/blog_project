@@ -16,7 +16,7 @@
     <!-- navbar -->
     <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
         <a class="navbar-brand" href="#">
-            <img src="pizza.jpg" width="30" height="30" class="d-inline-block align-top" alt="pizza logo">
+            <img src="/assets/pizza.jpg" width="30" height="30" class="d-inline-block align-top" alt="pizza logo">
             Pizza Blog
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -46,13 +46,13 @@
         </div>
 
         <div class="form container">
-            <form>
+            <form action="/submit" method="POST">
                 <label for="inputBlogAuthor">Author:</label>
-                <input type="text" placeholder="Enter name (optional)" id="inputBlogAuthor">
+                <input type="text" name="author" placeholder="Enter name (optional)" id="inputBlogAuthor">
                 <label for="inputBlogTitle">Title of post:</label>
-                <input type="text" id="inputBlogTitle" placeholder="Enter title here...">
+                <input type="text" id="inputBlogTitle" name="title" placeholder="Enter title here...">
                 <label for="inputBlogPost">Write your post here:</label>
-                <textarea type="text" id="inputBlogPost" placeholder="Enter blog post here..."></textarea>
+                <textarea type="text" id="inputBlogPost" name="content" placeholder="Enter blog post here..."></textarea>
                 <label for="gifBox">Throw in a gif! (optional):</label>
                 <div id="gifBox">
                     <div id="gifCredits">
