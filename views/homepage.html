@@ -5,15 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/blogPage.css" type="text/css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
-    <script
-    src="https://code.jquery.com/jquery-3.4.1.min.js"
-    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-    crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/index.css" type="text/css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="/js/blog.js"></script>
     <title>Blog_Homepage</title>
 </head>
 
@@ -30,7 +25,7 @@
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link active" href="#">Home</a>
+                    <a class="nav-link active" href="/">Home</a>
                 </li>
                 <li class="navbar-nav">
                     <a class="nav-link" href="/blog/create">Upload</a>
@@ -49,22 +44,34 @@
                 <p class="lead">Read if you dare...</p>
             </div>
         </div>
-        <div id="blogContainer">
-            <div id="blogBox">
-                <div id="blogHeader">
-                    <div id="titleBox">
-                        <h3 id="title"><%= title %></h3>
-                    </div>
-                    <div id="authorBox">
-                        <p id="author"><%= author %></p>
-                    </div>
+
+        <!-- blog posts start here -->
+
+        <% for(var i=blogs.length-1; i>=0; i--) { %>
+        <div class="blogPost container">
+            <div class="blogPostTitle">
+                <h3 class="blogPostH3"><a href="<%= '/blog/' + blogs[i].id %>"><%= blogs[i].title %></a></h3>
+            </div>
+            <div class="blogPostTextarea">
+                <p class="blogPostP"><%= blogs[i].author %></p>
+            </div>
+            <div class="blogPostTextarea">
+                <p class="blogPostP"><a href="<%= '/blog/' + blogs[i].id %>"><%= blogs[i].content %></a></p>
+            </div>
+            <div class="likesAndEmojiDiv">
+                <div class="emojiBox">
+                Emojis go here...
                 </div>
-                <div id="blogContent">
-                    <p id="content"><%= content %></p>
+                <div class="likesBox">
+                Number of likes go here...
                 </div>
             </div>
         </div>
+        <% } %>
 
-        <!-- http://pioul.fr/jquery-maxlength -->
+    
+
+
+
 </body>
 </html>

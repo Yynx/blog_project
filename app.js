@@ -29,7 +29,7 @@ class BlogPost {
         if (author)
             this.author = author;
         else
-            author = "anonymous";
+            this.author = "anonymous";
         this.comments = [];
         this.reactions = [0, 0, 0];
     }
@@ -67,14 +67,27 @@ const saveJson = (jsonObj) => {
 }
 
 //first page render
-app.get('/', (req, res) => {
-    res.render('blog.html');
+app.get('', (req, res) => {
+    fs.readFile('public/assets/blogs.json', (err, data) => {
+        let jsonArray;
+        try {
+            jsonArray = JSON.parse(data);
+        }
+        catch (err) {
+            console.log(err);
+            //unexpected end of json input due to empty json file
+            jsonArray = [];
+        
+        res.render('homepage.html',{blogs : jsonArray });
+    }
+   
+});
 });
 
 //blog creation render
 app.get('/blog/create', (req,res) => {
     res.render('form.html');
-})
+});
 
 
 //gets and renders a specific blog post
@@ -111,5 +124,4 @@ app.post('/submit', (req, res) => {
 });
 
 app.listen(port, () => console.log(`Listening on ${port}`));
-
 
