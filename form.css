@@ -20,6 +20,41 @@ form {
     flex-direction: column;
 }
 
+#submitBox {
+    display:flex;
+    justify-content: center;
+}
+
 .submit_button {
-    margin: auto;
+    margin-top: 20px;
+    width: 30%;
+}
+
+#inputBlogAuthor {
+    width: 30%;
+}
+
+#gifBox {
+    height: 200px;
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+#gifCredits {
+    position: absolute;
+    border: 2px solid blue;
+    align-items: flex-end;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+}
+
+#gifSearchBox {
+    justify-content: center;
+    border: 2px solid red;
+    width: 100%;
+    position: relative;
+    z-index: -1;
 }
