@@ -1,0 +1,53 @@
+body {
+    background-color: lightblue;
+}
+
+.jumbotron {
+    display: flex;
+    justify-content: center;
+    padding-top: 140px;
+}
+
+.jumboContainer {
+    display: flex;
+    flex-direction: column;
+    /* border: 2px solid black; */
+    align-items: center;
+}
+
+.blogPostP {
+    overflow: hidden; /* elipsis */
+    white-space: nowrap; /* elipsis */
+    text-overflow: ellipsis; /*  elipsis */
+}
+
+.blogPost {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    padding: 30px;
+    margin-bottom: 40px; /* space between different blog posts */
+}
+
+a:hover {
+    text-decoration: none; /* removes underline when hovering over links */
+    color: pink;
+}
+
+a {
+    text-decoration: none;
+    color: #212529;
+}
+
+.likesAndEmojiDiv {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.emojiBox {
+    background-color: green;
+}
+
+.likesBox {
+    background-color: purple;
+}
