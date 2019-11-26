@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="blog.css">
+    <script src="blog.js"></script>
+    <title>BlogPost</title>
+
+</head>
+
+<body>
+    <div class="form">
+        <form action="/submit" method="POST">
+            <input type="text" name="title" id="" placeholder="Title" value="Title">
+            <input type="text" name="author" id="" placeholder="Author name" value="author">
+            <textarea name="content" id="" cols="30" placeholder="Enter here..." rows="10">content</textarea>
+            <input type="submit">
+        </form>
+        
+    </div>
+    <div id="formOutput">
+
+    </div>
+
+</body>
+
+</html>
