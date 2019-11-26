@@ -85,7 +85,7 @@ app.get('', (req, res) => {
 });
 
 //blog creation render
-app.get('/blog/create', (req,res) => {
+app.get('/create', (req,res) => {
     res.render('form.html');
 });
 

@@ -28,7 +28,7 @@
                     <a class="nav-link active" href="/">Home</a>
                 </li>
                 <li class="navbar-nav">
-                    <a class="nav-link" href="/blog/create">Upload</a>
+                    <a class="nav-link" href="/create">Upload</a>
                 </li>
                 <li class="navbar-nav">
                     <a class="nav-link" href="#">Extra</a>
@@ -58,12 +58,12 @@
             <div class="blogPostTextarea">
                 <p class="blogPostP"><a href="<%= '/blog/' + blogs[i].id %>"><%= blogs[i].content %></a></p>
             </div>
-            <div class="likesAndEmojiDiv">
+            <div class="commentsAndEmojiDiv">
                 <div class="emojiBox">
                 Emojis go here...
                 </div>
-                <div class="likesBox">
-                Number of likes go here...
+                <div class="commentsBox">
+                <%= blogs[i].comments.length %> comment(s)
                 </div>
             </div>
         </div>

@@ -39,7 +39,7 @@ a {
     color: #212529;
 }
 
-.likesAndEmojiDiv {
+.commentsAndEmojiDiv {
     display: flex;
     justify-content: flex-end;
 }
@@ -48,6 +48,6 @@ a {
     background-color: green;
 }
 
-.likesBox {
+.commentsBox {
     background-color: purple;
 }
