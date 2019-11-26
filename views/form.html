@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/form.css" type="text/css">
-    <script
-    src="https://code.jquery.com/jquery-3.4.1.min.js"
-    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-    crossorigin="anonymous"></script>    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src='https://ili4x.github.io/inputEmoji/inputEmoji.js'></script>
     <script src="/js/form.js"></script>
     <title>Blog_Homepage</title>
 </head>
@@ -38,37 +38,38 @@
                 </li>
             </ul>
         </div>
-        </nav>
+    </nav>
 
-        <!-- jumbotron -->
-        <div class="jumbotron jumbotron-fluid">
-            <div class="jumboContainer">
-                <h1 class="display-4">Anonymous blogs</h1>
-                <p class="lead">Read if you dare...</p>
+    <!-- jumbotron -->
+    <div class="jumbotron jumbotron-fluid">
+        <div class="jumboContainer">
+            <h1 class="display-4">Anonymous blogs</h1>
+            <p class="lead">Read if you dare...</p>
+        </div>
+    </div>
+
+    <div class="form container">
+        <form action="/submit" method="POST">
+            <label for="inputBlogAuthor">Author:</label>
+            <input type="text" name="author" placeholder="Enter name (optional)" id="inputBlogAuthor" maxlength="30">
+            <label for="inputBlogTitle">Title of post:</label>
+            <input type="text" id="inputBlogTitle" name="title" placeholder="Enter title here..." maxlength="100">
+            <label for="inputBlogPost">Write your post here:</label>
+            <textarea type="text" id="inputBlogPost" name="content" placeholder="Enter blog post here..." maxlength="1200"></textarea>
+            <div><span id="remainingChars">1200</span> character(s) remaining </div>
+            <label for="gifBox">Throw in a gif! (optional):</label>
+            <div id="gifBox">
+                <div id="gifCredits">
+                    <img src="/assets/Poweredby_100px-White_VertLogo.png">
+                </div>
+                <div id="gifSearchBox">THIS WILL BE THE GIF SEARCH BOX</div>
             </div>
-        </div>
-
-        <div class="form container">
-            <form action="/submit" method="POST">
-                <label for="inputBlogAuthor">Author:</label>
-                <input type="text" name="author" placeholder="Enter name (optional)" id="inputBlogAuthor" maxlength="30">
-                <label for="inputBlogTitle">Title of post:</label>
-                <input type="text" id="inputBlogTitle" name="title" placeholder="Enter title here..." maxlength="100">
-                <label for="inputBlogPost">Write your post here:</label>
-                <textarea type="text" id="inputBlogPost" name="content" placeholder="Enter blog post here..." maxlength="1200"></textarea>
-                <div><span id="remainingChars">1200</span> character(s) remaining </div>
-                <label for="gifBox">Throw in a gif! (optional):</label>
-                <div id="gifBox">
-                    <div id="gifCredits">
-                        <img src="/assets/Poweredby_100px-White_VertLogo.png">
-                    </div>
-                    <div id="gifSearchBox">THIS WILL BE THE GIF SEARCH BOX</div>
-                </div>
-                <div id="submitBox">
-                    <button type="submit" class="submitButton">Submit</button>
-                </div>
-            </form>
-        </div>
+            <div id="submitBox">
+                <button type="submit" class="submitButton">Submit</button>
+            </div>
+        </form>
+    </div>
 
 </body>
+
 </html>
