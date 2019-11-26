@@ -32,17 +32,17 @@ GitHub pages/Heroku
 
 ### The Team ###
 
-####Team preferences####
+#### Team preferences ####
 Lauren - frontend
 Dan - frontend/backend
 Brian -front end/backend
 Josh - backend
 Using camelCase
 
-#####Standups####
+##### Standups ####
 9.30AM (and evening one if proposed)
 
-####Teamwork style#####
+#### Teamwork style #####
 Morning: Driver/navigator with a feedback session
 After lunch: solo work
 After that: group catchup going through solo work
@@ -61,7 +61,7 @@ Pair 2 - working on frontend - HTML and CSS layout for homepage, blog creation a
 This was useful as it means we could use base parts of the front and back end respectivley on how the other functioned.
 
 
-###Method### 
+### Method ### 
 During this we choose to work in small cycles of creating a part of the site:
 
 1. made sure to get basic functionality tested and working before overcomplicating.
@@ -71,7 +71,7 @@ During this we choose to work in small cycles of creating a part of the site:
 This meant we were building on a solid foundation.
 
 
-###Issues###
+### Issues ###
 1. Problems with git hub branches using git command line 
 --> using github pages
 
