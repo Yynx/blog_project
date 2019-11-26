@@ -13,12 +13,13 @@ app.use(express.urlencoded());
 
 
 class Comment {
-    constructor(id, content, author) {
+    constructor(content, author) {
         this.content = content;
+        this.time = Date(Date.now).toString();
         if (author)
             this.author = author;
         else
-            author = "anonymous";
+            this.author = "anonymous";
     }
 }
 class BlogPost {
@@ -38,7 +39,6 @@ class BlogPost {
         this.comments.push(new Comment(comment, author));
     }
 }
-
 
 
 //saves new json object to array
@@ -78,8 +78,8 @@ app.get('', (req, res) => {
             //unexpected end of json input due to empty json file
             jsonArray = [];
         
+        }
         res.render('homepage.html',{blogs : jsonArray });
-    }
    
 });
 });
@@ -121,6 +121,37 @@ app.post('/submit', (req, res) => {
    
     
     res.redirect(`/`);
+});
+
+app.post('/comment', (req, res) => {
+    //get the url of the post request
+    let reqUrl = req.rawHeaders[25];
+    //get the comment
+    let content = req.body.comment;
+    let author = req.body.author;
+    //if the comment is not empty
+    if(content !== "")
+    {
+    // get the index from the url of the post request
+    let index = reqUrl.split('/')[4];
+
+    //get our array of blogs
+    fs.readFile('public/assets/blogs.json', (err, data) => {
+        if (err) throw err;
+        //parses data from json file into a useable array format
+        let jsonArray = JSON.parse(data);
+        //add comment to specific blog by id
+        comment = new Comment(content,author);
+        jsonArray[index -1].comments.push(comment);
+
+        newJsonArray = JSON.stringify(jsonArray);
+        //save the blogs back to file
+        fs.writeFile("public/assets/blogs.json", newJsonArray, () => {});
+
+        res.redirect(`/blog/${index}`);
+    });
+    }
+    
 });
 
 app.listen(port, () => console.log(`Listening on ${port}`));
