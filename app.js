@@ -67,6 +67,10 @@ app.get('/', (req, res) => {
     res.render('blog.html');
 });
 
+app.get('/blog/create', (req,res) => {
+    res.render('form.html');
+})
+
 app.get('/specific/:index', (req, res) => {
     let index = req.params.index;
     fs.readFile('public/blogs.json', (err, data) => {
