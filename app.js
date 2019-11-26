@@ -22,8 +22,8 @@ class Comment {
     }
 }
 class BlogPost {
-    constructor(id, title, content, author) {
-        this.id = id;
+    constructor(title, content, author) {
+        this.id = 1;
         this.title = title;
         this.content = content;
         if (author)
@@ -43,7 +43,7 @@ class BlogPost {
 
 //saves new json object to array
 const saveJson = (jsonObj) => {
-    fs.readFile('public/blogs.json', (err, data) => {
+    fs.readFile('public/assets/blogs.json', (err, data) => {
         if (err) throw err;
         let jsonArray;
         try {
@@ -56,10 +56,14 @@ const saveJson = (jsonObj) => {
         }
         jsonObj.id = jsonArray.length + 1;
         jsonArray.push(jsonObj);
+        //convert array to form that can be saved in json file
         newJsonArray = JSON.stringify(jsonArray);
-        fs.writeFile("public/blogs.json", newJsonArray, () => {
+        fs.writeFile("public/assets/blogs.json", newJsonArray, () => {
         });
+        
     });
+    
+    
 }
 
 //first page render
@@ -67,20 +71,25 @@ app.get('/', (req, res) => {
     res.render('blog.html');
 });
 
+//blog creation render
 app.get('/blog/create', (req,res) => {
     res.render('form.html');
 })
 
-app.get('/specific/:index', (req, res) => {
+
+//gets and renders a specific blog post
+app.get('/blog/:index', (req, res) => {
     let index = req.params.index;
-    fs.readFile('public/blogs.json', (err, data) => {
+    fs.readFile('public/assets/blogs.json', (err, data) => {
         if (err) throw err;
+        //parses data from json file into a useable array format
         let jsonArray = JSON.parse(data);
+        //checks input index is a valid one
         if (index > 0 && index <= jsonArray.length) {
-            res.send(jsonArray[index - 1])
+            res.render("blogPage.html", jsonArray[index - 1]);
         }
         else {
-            res.send(`Choose index between 1 and ${jsonArray.length}`)
+            res.send(`Blog doesn't exist. Please choose an index between 1 and ${jsonArray.length}`);
         }
     });
 });
@@ -91,13 +100,14 @@ app.post('/submit', (req, res) => {
     let content = req.body.content;
     let author = req.body.author;
     let newPost = new BlogPost(
-        1,
         title,
         content,
         author
     );
-    saveJson(newPost);
-    res.redirect('/');
+   saveJson(newPost);
+   
+    
+    res.redirect(`/`);
 });
 
 app.listen(port, () => console.log(`Listening on ${port}`));
