@@ -1,31 +1,44 @@
 const fs = require('fs');
 
-const saveJson = (jsonObj) => {
-    fs.readFile('public/assets/blogs.json', (err, data) => {
-        if (err) throw err;
-        let jsonArray;
-        try {
-            jsonArray = JSON.parse(data);
-        }
-        catch (err) {
-            console.log(err);
-            //unexpected end of json input due to empty json file
-            jsonArray = [];
-        }
-        jsonObj.id = jsonArray.length + 1;
+//saves file
+const saveNewBlog = (filePath, jsonObj) =>
+{
+    readFile(filePath).then(jsonArray => {
+        jsonObj.id = jsonArray[jsonArray.length -1].id +1;
         jsonArray.push(jsonObj);
-        //convert array to form that can be saved in json file
-        newJsonArray = JSON.stringify(jsonArray);
-        fs.writeFile("public/assets/blogs.json", newJsonArray, () => {
-        });
-        
-    }); 
+        saveFile(filePath, jsonArray);
+    });
 }
 
-const readFile = (filepath) => {
+const saveFile = (filePath, jsonArray) => {
+    //sets id to id of most recent blog post +1
+          
+        newJsonArray = JSON.stringify(jsonArray)
+        fs.writeFile(filePath, newJsonArray, ()=>{});
+};
+
+const updateBlog = (filePath, udpateObj, id) =>
+{
+    let newComment = {content: udpateObj.comment.content, time: udpateObj.comment.time, author: udpateObj.comment.author}
+    readFile(filePath).then(jsonArray => {
+        for (let obj of jsonArray)
+        {
+             if(obj.id == id)
+             {
+                 obj.comments.push(newComment);
+                 
+             }
+        }
+        
+         saveFile(filePath, jsonArray);
+    })
+};
+
+//reads file
+const readFile = (filePath) => {
 
     return new Promise(function(resolve, reject) {
-    fs.readFile(filepath, (err, data) =>{
+    fs.readFile(filePath, (err, data) =>{
         let jsonArray;
          try {
             jsonArray = JSON.parse(data);
@@ -42,4 +55,4 @@ const readFile = (filepath) => {
 
 
 
-module.exports = {saveJson, readFile};
+module.exports = {updateBlog, saveNewBlog, readFile, saveFile};
