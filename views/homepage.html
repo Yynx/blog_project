@@ -18,7 +18,7 @@
     <!-- navbar -->
     <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
         <a class="navbar-brand" href="/">
-            <img src="/assets/pizza.jpg" href="/" width="30" height="30" class="d-inline-block align-top" alt="pizza logo">
+            <img src="/assets/logo.png" href="/" width="30" height="30" class="d-inline-block align-top" alt="anonyblog logo">
             Anonyblog
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -42,6 +42,7 @@
         <!-- jumbotron -->
         <div class="jumbotron jumbotron-fluid">
             <div class="jumboContainer">
+                <!-- <img id="logo" src="/assets/logo.png" alt="anonyblog logo"> -->
                 <h1 class="display-4">Anonymous blogs</h1>
                 <p class="lead">Read if you dare...</p>
             </div>
@@ -62,10 +63,17 @@
             </div>
             <div class="commentsAndEmojiDiv">
                 <div class="emojiBox">
-                Emojis go here...
+                <img src="/assets/happy.png">
+                <img src="/assets/neutral.png">
+                <img src="/assets/sad.png">
                 </div>
                 <div class="commentsBox">
                 <%= blogs[i].comments.length %> comment(s)
+                </div>
+                <div class="reactionsCount">
+                    <p><%= blogs[i].reactions[0] %></p>
+                    <p><%= blogs[i].reactions[1] %></p>
+                    <p><%= blogs[i].reactions[2] %></p>
                 </div>
             </div>
         </div>

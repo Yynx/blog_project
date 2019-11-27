@@ -21,7 +21,7 @@
     <!-- navbar -->
     <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
         <a class="navbar-brand" href="/">
-            <img src="/assets/pizza.jpg" href="/" width="30" height="30" class="d-inline-block align-top" alt="pizza logo">
+            <img src="/assets/logo.png" href="/" width="30" height="30" class="d-inline-block align-top" alt="anonyblog logo">
            Anonyblog
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -30,9 +30,9 @@
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link active" href="/">Home</a>
+                    <a class="nav-link" href="/">Home</a>
                 </li>
-                <li class="navbar-nav">
+                <li class="navbar-nav active">
                     <a class="nav-link" href="/create">Upload</a>
                 </li>
                 <li class="navbar-nav">
@@ -58,11 +58,11 @@
             </div>
             <div class="formPadding">
             <label for="inputBlogTitle">Title of post:</label>
-            <input type="text" id="inputBlogTitle" name="title" placeholder="Enter title here..." maxlength="100">
+            <input type="text" required id="inputBlogTitle" name="title" placeholder="Enter title here..." maxlength="100">
             </div>
             <div class="formPadding">
             <label for="inputBlogPost">Write your post here:</label>
-            <textarea type="text" id="inputBlogPost" name="content" placeholder="Enter blog post here..." maxlength="1200" rows="10"></textarea>
+            <textarea type="text" required id="inputBlogPost" name="content" placeholder="Enter blog post here..." maxlength="1200" rows="10"></textarea>
             <div><span id="remainingChars">1200</span> character(s) remaining </div>
             </div>
             <div class="formPadding">
