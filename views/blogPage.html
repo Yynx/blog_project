@@ -22,7 +22,7 @@
     <!-- navbar -->
     <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
         <a class="navbar-brand" href="/">
-            <img src="/assets/pizza.jpg" width="30" height="30" class="d-inline-block align-top" alt="pizza logo">
+            <img src="/assets/logo.png" width="30" height="30" class="d-inline-block align-top" alt="anonyblog logo">
             Anonyblog
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -63,11 +63,23 @@
                 <div id="blogContent">
                     <p id="content"><%= content %></p>
                 </div>
+                <div id="reactionsBox">
+                    <form id="reactionsForm">
+                    <input type="image" id="happyReactEmoji" src="/assets/happy.png" alt="happy react">
+                    <input type="image" id="neutralReactEmoji" src="/assets/neutral.png" alt="neutral react">
+                    <input type="image" id="sadReactEmoji" src="/assets/sad.png" alt="sad react">
+                    </form>
+                </div>
+                <div id="reactionsCounter">
+                        <p id="happyCounter"><%= reactions[0] %></p>
+                        <p id="neutralCounter"><%= reactions[1] %></p>
+                        <p id="sadCounter"><%= reactions[2] %></p>
+                    </div>
             </div>
         </div>
 
         <div id="commentsContainer">
-            <form action="/comment" method="POST">
+            <form id="commentsForm" action="/comment" method="POST">
             <label for="author">Author:</label>
             <input type="text" id="author" name="author" placeholder="Author (optional)">
             <label for="comment">Add a comment: </label>
@@ -90,7 +102,6 @@
         </div>
         </div>
         
-
-
+        <!-- <div>Icons made by <a href="https://www.flaticon.com/authors/roundicons" title="Roundicons">Roundicons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
 </body>
 </html>

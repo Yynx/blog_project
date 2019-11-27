@@ -22,6 +22,7 @@ body {
     padding: 30px;
     background-color: white;
     width: 60%;
+    position: relative;
 }
 
 #title {
@@ -40,6 +41,43 @@ body {
     padding-top: 20px;
 }
 
+#reactionsBox {
+    display: flex;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: grey;
+    width: 200px;
+    height: 40px;
+    position: absolute;
+    right: -20px; /* shifts emoji reaction box right 20px; */
+    bottom: -20px; /* shifts emoji box down 20px; */
+    justify-content: space-evenly; /* spaces emoji reactions evenly */
+}
+
+#reactionsForm {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: inherit;
+}
+
+#reactionsCounter {
+    display: flex;
+    justify-content: right;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: pink;
+    width: 200px;
+    height: 40px;
+    position: absolute;
+    right: -60px; /* shifts emoji counter box right */
+    bottom: -60px; /* shifts emoji counter box down */
+    justify-content: space-evenly; /* spaces emoji reactions evenly */
+}
+
+input[type=image] {
+    object-fit: contain;
+}
 
 #commentsContainer {
     padding-top: 50px;
@@ -52,7 +90,7 @@ body {
     padding-top: 50px;
 }
 
-form {
+#commentsForm {
     display: flex;
     flex-direction: column;
 }
