@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -33,55 +34,56 @@
                     <a class="nav-link" href="/create">Upload</a>
                 </li>
                 <li class="navbar-nav">
-                    <a class="nav-link" href="#">Extra</a>
+                    <a class="nav-link" href="/sent">Analysis</a>
                 </li>
             </ul>
         </div>
-        </nav>
+    </nav>
 
-        <!-- jumbotron -->
-        <div class="jumbotron jumbotron-fluid">
-            <div class="jumboContainer">
-                <!-- <img id="logo" src="/assets/logo.png" alt="anonyblog logo"> -->
-                <h1 class="display-4">Anonymous blogs</h1>
-                <p class="lead">Read if you dare...</p>
-            </div>
+    <!-- jumbotron -->
+    <div class="jumbotron jumbotron-fluid">
+        <div class="jumboContainer">
+            <!-- <img id="logo" src="/assets/logo.png" alt="anonyblog logo"> -->
+            <h1 class="display-4">Anonymous blogs</h1>
+            <p class="lead">Read if you dare...</p>
         </div>
+    </div>
 
-        <!-- blog posts start here -->
+    <!-- blog posts start here -->
 
-        <% for(var i=blogs.length-1; i>=0; i--) { %>
-        <div class="blogPost container">
-            <div class="blogPostTitle">
-                <h3 class="blogPostH3"><a href="<%= '/blog/' + blogs[i].id %>"><%= blogs[i].title %></a></h3>
-            </div>
-            <div class="blogPostTextarea">
-                <p class="blogPostP"><%= blogs[i].author %></p>
-            </div>
-            <div class="blogPostTextarea">
-                <p class="blogPostP"><a href="<%= '/blog/' + blogs[i].id %>"><%= blogs[i].content %></a></p>
-            </div>
-            <div class="commentsAndEmojiDiv">
-                <div class="emojiBox">
+    <% for(var i=blogs.length-1; i>=0; i--) { %>
+    <div class="blogPost container">
+        <div class="blogPostTitle">
+            <h3 class="blogPostH3"><a href="<%= '/blog/' + blogs[i].id %>"><%= blogs[i].title %></a></h3>
+        </div>
+        <div class="blogPostTextarea">
+            <p class="blogPostP"><%= blogs[i].author %></p>
+        </div>
+        <div class="blogPostTextarea">
+            <p class="blogPostP"><a href="<%= '/blog/' + blogs[i].id %>"><%= blogs[i].content %></a></p>
+        </div>
+        <div class="commentsAndEmojiDiv">
+            <div class="emojiBox">
                 <img src="/assets/happy.png">
                 <img src="/assets/neutral.png">
                 <img src="/assets/sad.png">
-                </div>
-                <div class="commentsBox">
+            </div>
+            <div class="commentsBox">
                 <%= blogs[i].comments.length %> comment(s)
-                </div>
-                <div class="reactionsCount">
-                    <p><%= blogs[i].reactions[0] %></p>
-                    <p><%= blogs[i].reactions[1] %></p>
-                    <p><%= blogs[i].reactions[2] %></p>
-                </div>
+            </div>
+            <div class="reactionsCount">
+                <p><%= blogs[i].reactions[0] %></p>
+                <p><%= blogs[i].reactions[1] %></p>
+                <p><%= blogs[i].reactions[2] %></p>
             </div>
         </div>
-        <% } %>
+    </div>
+    <% } %>
 
-    
+
 
 
 
 </body>
+
 </html>
