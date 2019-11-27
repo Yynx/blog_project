@@ -1,9 +1,5 @@
-import {saveFile, area} from "./fileHandler.js";
-console.log(saveFile());
-console.log(area(2));
-
 $(document).ready(() => {
-    // console.log($('#inputBlogAuthor').val().length);
+    console.log($('#inputBlogAuthor').val().length);
 
     let maxLength = 1200;
     $('#inputBlogPost').keyup(() => {
