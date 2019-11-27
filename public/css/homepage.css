@@ -52,13 +52,31 @@ a {
 .commentsAndEmojiDiv {
     display: flex;
     justify-content: flex-end;
+    position: relative;
 }
 
 .emojiBox {
+    display: flex;
+    justify-content: space-evenly;
     background-color: green;
+    width: 180px;
+}
+
+.reactionsCount {
+    display: flex;
+    justify-content: right;
+    width: 200px;
+    height: 40px;
+    position: absolute;
+    right: 100px; /* shifts emoji counter box right */
+    bottom: -30px; /* shifts emoji counter box down */
+    justify-content: space-evenly; /* spaces emoji reactions evenly */
+    color: red;
 }
 
 .commentsBox {
     background-color: purple;
+    display: flex;
+    width: 130px;
 }
 

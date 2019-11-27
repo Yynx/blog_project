@@ -63,10 +63,17 @@
             </div>
             <div class="commentsAndEmojiDiv">
                 <div class="emojiBox">
-                Emojis go here...
+                <img src="/assets/happy.png">
+                <img src="/assets/neutral.png">
+                <img src="/assets/sad.png">
                 </div>
                 <div class="commentsBox">
                 <%= blogs[i].comments.length %> comment(s)
+                </div>
+                <div class="reactionsCount">
+                    <p><%= blogs[i].reactions[0] %></p>
+                    <p><%= blogs[i].reactions[1] %></p>
+                    <p><%= blogs[i].reactions[2] %></p>
                 </div>
             </div>
         </div>

@@ -66,13 +66,13 @@ body {
     justify-content: right;
     border: 1px solid black;
     border-radius: 5px;
-    background-color: pink;
     width: 200px;
     height: 40px;
     position: absolute;
-    right: -60px; /* shifts emoji counter box right */
-    bottom: -60px; /* shifts emoji counter box down */
+    right: -35px; /* shifts emoji counter box right */
+    bottom: -50px; /* shifts emoji counter box down */
     justify-content: space-evenly; /* spaces emoji reactions evenly */
+    color: red;
 }
 
 input[type=image] {
