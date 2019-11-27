@@ -1,5 +1,6 @@
 body {
     background-color: lightblue;
+    font-family: 'Muli', sans-serif;
 }
 
 .jumbotron {
@@ -29,18 +30,18 @@ body {
     border-radius: 5px;
     box-shadow: 5px 10px 18px rgba(38, 57, 63, 0.3);
     padding: 30px;
-    margin-bottom: 70px; /* space between different blog posts */
+    margin-top: 80px; /* space between different blog posts */
 }
 
 .blogPost:hover {
     border: 1px solid white;
     border-radius: 5px;
-    box-shadow: 5px 10px 18px purple;
+    box-shadow: 5px 10px 18px grey;
 }
 
 a:hover {
     text-decoration: none; /* removes underline when hovering over links */
-    color: pink;
+    color: purple;
 }
 
 a {
