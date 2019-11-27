@@ -22,7 +22,7 @@
     <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
         <a class="navbar-brand" href="/">
             <img src="/assets/pizza.jpg" width="30" height="30" class="d-inline-block align-top" alt="pizza logo">
-            Pizza Blog
+            Anonyblog
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
@@ -74,6 +74,8 @@
             <div><span id="remainingChars">300</span> character(s) remaining </div>
             <button type="submit">Submit</button>
         
+        <div id="commentsList">
+        <h3>Comments:</h3>
             </form>
             <p class="numOfComments"><%= comments.length %> comment(s)</p>
             <!-- start of for loop -->
@@ -84,6 +86,7 @@
             </div>
             <% } %>
             <!-- end of for loop -->
+        </div>
         </div>
         
 

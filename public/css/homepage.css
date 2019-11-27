@@ -32,6 +32,12 @@ body {
     margin-bottom: 70px; /* space between different blog posts */
 }
 
+.blogPost:hover {
+    border: 1px solid white;
+    border-radius: 5px;
+    box-shadow: 5px 10px 18px purple;
+}
+
 a:hover {
     text-decoration: none; /* removes underline when hovering over links */
     color: pink;
@@ -54,3 +60,4 @@ a {
 .commentsBox {
     background-color: purple;
 }
+
