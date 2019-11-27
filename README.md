@@ -97,3 +97,48 @@ Host site.
 
 Blockers: Due to early issues merging on git might have some issues
 
+## Day 3 - Minimum Viable Product
+
+### Stand Up
+
+#### Achievements:
+
+Brian:
+implement emoji feature
+went through libraries with bad readmes until finding one that worked!
+
+Lauren / Josh:
+merged site together
+added css
+added comment functionality
+
+Dan:
+got giphy 'working' on express and JQuery
+going with JQuery
+
+#### Goals: 
+
+Brian: 
+sentiment analysis for blog content
+use info to suggest emojis to use
+heroku/github pages
+
+Josh: 
+emoji buttons
+comment functionality (how they're loaded / saved on submission)
+implement preview button to view blog post
+
+Lauren:
+do more css
+
+Dan:
+fix up giphy app to load list of individual gifs (stop duplicates from happening)
+
+#### Stretch goals: 
+automatic tagging of pages (josh/brian)
+determine what is possible from all these
+
+#### Blockers: 
+None
+
+
