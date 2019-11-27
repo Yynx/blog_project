@@ -1,3 +1,25 @@
-
-[{"id":1,"title":"I work with a bunch of cheats","content":":(","author":"Lauren","comments":[{"content":"i  can't think","time":"Tue Nov 26 2019 15:51:36 GMT+0000 (Greenwich Mean Time)","author":"josh"},{"content":"2","time":"Wed Nov 27 2019 17:08:10 GMT+0000 (Greenwich Mean Time)","author":"12"}],"reactions":[0,0,0]}]
-
+[
+    {
+        "id": 1,
+        "title": "I work with a bunch of cheats",
+        "content": ":(",
+        "author": "Lauren",
+        "comments": [
+            {
+                "content": "i  can't think",
+                "time": "Tue Nov 26 2019 15:51:36 GMT+0000 (Greenwich Mean Time)",
+                "author": "josh"
+            },
+            {
+                "content": "2",
+                "time": "Wed Nov 27 2019 17:08:10 GMT+0000 (Greenwich Mean Time)",
+                "author": "12"
+            }
+        ],
+        "reactions": [
+            0,
+            0,
+            0
+        ]
+    }
+]
