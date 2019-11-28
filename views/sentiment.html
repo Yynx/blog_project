@@ -5,16 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- axios -->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <link rel="stylesheet" href="css/sentiment.css">
+    <!-- css -->
+    <link rel="stylesheet" href="/css/sentiment.css" type="text/css">
+    <!-- jQUery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- more bootstrap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
     <title>Sentiment Analysis</title>
 </head>
 
 <body>
-    <!-- navbar -->
-    <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
+     <!-- navbar -->
+     <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
         <a class="navbar-brand" href="/">
             <img src="/assets/logo.png" href="/" width="30" height="30" class="d-inline-block align-top" alt="anonyblog logo">
             Anonyblog
@@ -36,46 +45,60 @@
             </ul>
         </div>
     </nav>
-    <section class="head">
-        <div>
-            <h1>Comments sentiment analysis</h1>
-        </div>
-    </section>
-    <div class="main">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Mood</th>
-                    <!-- <th>Result</th> -->
-                    <th>Writer</th>
-                    <th>Comment</th>
-                </tr>
-            </thead>
-            <tbody id="sentTab">
 
-            </tbody>
-        </table>
+     <!-- jumbotron -->
+     <div class="jumbotron jumbotron-fluid">
+        <div class="jumboContainer">
+            <!-- <img id="logo" src="/assets/logo.png" alt="anonyblog logo"> -->
+            <h1 class="display-4">Anonymous blogs</h1>
+            <p class="lead">Read if you dare...</p>
+        </div>
     </div>
-    <section class="head2">
-        <div>
+
+    <!-- comments sentiment analysis -->
+    <div class="commentsSentimentDiv marg">
+        <h1>Comments sentiment analysis</h1>
+
+        <!-- table -->
+        <div class="commentsSentimentTable">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Mood</th>
+                        <!-- <th>Result</th> -->
+                        <th>Writer</th>
+                        <th>Comment</th>
+                    </tr>
+                </thead>
+                <tbody id="sentTab">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- blog sentiment analysis -->
+    <div class="blogSentimentDiv marg">
             <h1>Blog sentiment analysis</h1>
-        </div>
-    </section>
-    <div class="main2">
-        <table class="table2">
-            <thead>
-                <tr>
-                    <th>Mood</th>
-                    <!-- <th>Result</th> -->
-                    <th>Writer</th>
-                    <th>Title</th>
-                </tr>
-            </thead>
-            <tbody id="sTab2">
+   
+        <!-- table -->
+        <div class="blogSentimentTable">
+            <table class="table2">
+                <thead>
+                    <tr>
+                        <th>Mood</th>
+                        <!-- <th>Result</th> -->
+                        <th>Writer</th>
+                        <th>Title</th>
+                    </tr>
+                </thead>
+                <tbody id="sTab2">
 
-            </tbody>
-        </table>
+                </tbody>
+            </table>
+        </div>
     </div>
+
 </body>
 <script type="" src="js/sentiment.js"></script>
 <!-- <script type="" src="js/sentimentApp.js"></script> -->

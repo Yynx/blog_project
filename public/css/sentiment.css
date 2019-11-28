@@ -1,13 +1,29 @@
 body {
+  background-color: lightblue;
+  font-family: 'Muli', sans-serif;
   display: flex;
   flex-direction: column;
+}
+
+.jumbotron {
+  display: flex;
   justify-content: center;
-  align-content: center;
+  padding-top: 140px;
 }
-.head {
+
+.jumboContainer {
+  display: flex;
+  flex-direction: column;
+  /* border: 2px solid black; */
+  align-items: center;
+}
+
+.commentsSentimentDiv {
   align-self: center;
+  width: 60%;
 }
-.main {
+
+.commentsSentimentTable {
   align-self: center;
   margin: 4px;
   padding: 2px;
@@ -28,10 +44,16 @@ body {
   background-color: mistyrose;
 }
 
-.head2 {
-  align-self: center;
+.marg {
+  margin: 80px 0 0 0; /* spacing between divs */
 }
-.main2 {
+
+.blogSentimentDiv {
+  align-self: center;
+  width: 60%;
+}
+
+.blogSentimentTable {
   align-self: center;
   margin: 4px;
   padding: 2px;
