@@ -142,3 +142,35 @@ determine what is possible from all these
 None
 
 
+## Day 4
+
+Lauren & Dan:
+
+* Added giphy support to blog upload page.
+* Worked on homepage styling. 
+
+Today:
+
+* Finish giphy implementation.
+* Finalise styling.
+* Deploy
+
+Josh:
+* Refactored app.js.
+* Added routes and the required logic.
+* Implemented file handling classes.
+
+Today:
+* Reaction route.
+* Roam.
+
+Brian:
+
+* Sentiment analysis extension, including html and styling.
+
+Today:
+* Update routes.
+* Styling for analysis page.
+* Deploy.
+
+
