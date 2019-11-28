@@ -28,6 +28,9 @@
 - Node.js and Express
 - EJS/Pug
 - GitHub pages/Heroku
+- fs
+- [ml-sentiment](https://www.npmjs.com/package/ml-sentiment)
+- [inputEmoji](https://github.com/ili4x/inputEmoji)
 
 ### The Team ###
 
