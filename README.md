@@ -89,11 +89,12 @@ Pair 1: Navbar, form page, homepage, basic layout and css, github setup.
 
 Pair 2: Saving/loading json files, node js express (some routes), set up class structure, basic html to test these.
 
-Goals for the day:
+#### Goals for the day: 
 Merge front and backend.
 Host site.
 
-Blockers: Due to early issues merging on git might have some issues
+#### Blockers:
+Due to early issues merging on git might have some issues
 
 ## Day 3 - Minimum Viable Product
 
@@ -102,44 +103,43 @@ Blockers: Due to early issues merging on git might have some issues
 #### Achievements:
 
 Brian:
-implemented emoji feature
-went through libraries with bad readmes until finding one that worked!
+* Implemented emoji feature
+* Went through libraries with bad readmes until finding one that worked!
 
 Lauren / Josh:
-merged site together
-added css
-added comment functionality
+* Merged site together
+* Added css
+* Added comment functionality
 
 Dan:
-got giphy 'working' on express and JQuery
-going with JQuery
+* Got giphy 'working' on express and JQuery
+* Going with JQuery
 
 #### Goals: 
 
 Brian: 
-sentiment analysis for blog content
-use info to suggest emojis to use
-heroku/github pages
+* Sentiment analysis for blog content
+* Use info to suggest emojis to use
+* Heroku/github pages
 
 Josh: 
-emoji buttons
-comment functionality (how they're loaded / saved on submission)
-implement preview button to view blog post
+* Emoji buttons
+* Comment functionality (how they're loaded / saved on submission)
+* Implement preview button to view blog post
 
 Lauren:
-fix giphy css
-work with Dan on giphy functionality
+* Fix giphy css
+* Work with Dan on giphy functionality
 
 Dan:
-fix up giphy app to load list of individual gifs (stop duplicates from happening)
+* Fix up giphy app to load list of individual gifs (stop duplicates from happening)
 
 #### Stretch goals: 
-automatic tagging of pages (Josh/Brian)
-determine what is possible from all these
+* Automatic tagging of pages (Josh/Brian)
+* Determine what is possible from all these
 
 #### Blockers: 
 None
-
 
 ## Day 4
 
