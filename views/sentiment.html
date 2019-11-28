@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="css/sentiment.css">
+    <title>Sentiment Analysis</title>
+</head>
+
+<body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
+        <a class="navbar-brand" href="/">
+            <img src="/assets/logo.png" href="/" width="30" height="30" class="d-inline-block align-top" alt="anonyblog logo">
+            Anonyblog
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" href="/">Home</a>
+                </li>
+                <li class="navbar-nav">
+                    <a class="nav-link" href="/create">Upload</a>
+                </li>
+                <li class="navbar-nav">
+                    <a class="nav-link" href="/sent">Analysis</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <section class="head">
+        <div>
+            <h1>Comments sentiment analysis</h1>
+        </div>
+    </section>
+    <div class="main">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Mood</th>
+                    <!-- <th>Result</th> -->
+                    <th>Writer</th>
+                    <th>Comment</th>
+                </tr>
+            </thead>
+            <tbody id="sentTab">
+
+            </tbody>
+        </table>
+    </div>
+    <section class="head2">
+        <div>
+            <h1>Blog sentiment analysis</h1>
+        </div>
+    </section>
+    <div class="main2">
+        <table class="table2">
+            <thead>
+                <tr>
+                    <th>Mood</th>
+                    <!-- <th>Result</th> -->
+                    <th>Writer</th>
+                    <th>Title</th>
+                </tr>
+            </thead>
+            <tbody id="sTab2">
+
+            </tbody>
+        </table>
+    </div>
+</body>
+<script type="" src="js/sentiment.js"></script>
+<!-- <script type="" src="js/sentimentApp.js"></script> -->
+
+</html>

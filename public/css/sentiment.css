@@ -1,0 +1,54 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+.head {
+  align-self: center;
+}
+.main {
+  align-self: center;
+  margin: 4px;
+  padding: 2px;
+}
+
+.table {
+  text-align: center;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.table th {
+  padding: 25px;
+  background-color: darkgrey;
+}
+
+.table td {
+  background-color: mistyrose;
+}
+
+.head2 {
+  align-self: center;
+}
+.main2 {
+  align-self: center;
+  margin: 4px;
+  padding: 2px;
+}
+
+.table2 {
+  text-align: center;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.table2 th {
+  color: white;
+  padding: 25px;
+  background-color: rgb(104, 97, 97);
+}
+
+.table2 td {
+  background-color: rgb(233, 211, 208);
+}
