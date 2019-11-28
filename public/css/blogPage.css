@@ -12,7 +12,6 @@ body {
 .jumboContainer {
     display: flex;
     flex-direction: column;
-    /* border: 2px solid black; */
     align-items: center;
 }
 
@@ -22,22 +21,10 @@ body {
     padding: 30px;
     background-color: white;
     width: 60%;
-    position: relative;
-}
-
-#title {
-    display: flex;
-    justify-content: center;
-}
-
-#author {
-    display: flex;
-    justify-content: center;
+    position: relative; /* set to relative for reactionsBox and reactionsCounter */
 }
 
 #content {
-    display: flex;
-    justify-content: left;
     padding-top: 20px;
 }
 
@@ -48,7 +35,7 @@ body {
     background-color: grey;
     width: 200px;
     height: 40px;
-    position: absolute;
+    position: absolute; /* set in relation to blogContainer */ 
     right: -20px; /* shifts emoji reaction box right 20px; */
     bottom: -20px; /* shifts emoji box down 20px; */
     justify-content: space-evenly; /* spaces emoji reactions evenly */
@@ -63,12 +50,11 @@ body {
 
 #reactionsCounter {
     display: flex;
-    justify-content: right;
     border: 1px solid black;
     border-radius: 5px;
     width: 200px;
     height: 40px;
-    position: absolute;
+    position: absolute; /* set in relation to blogContainer */ 
     right: -35px; /* shifts emoji counter box right */
     bottom: -50px; /* shifts emoji counter box down */
     justify-content: space-evenly; /* spaces emoji reactions evenly */
@@ -76,18 +62,14 @@ body {
 }
 
 input[type=image] {
-    object-fit: contain;
+    object-fit: contain; /* makes emoji image inputs in the form fit the container */
 }
 
-#commentsContainer {
+#addAComment {
     padding-top: 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-#commentsList {
-    padding-top: 50px;
 }
 
 #commentsForm {
@@ -95,8 +77,15 @@ input[type=image] {
     flex-direction: column;
 }
 
+#commentsList {
+    padding-top: 50px;
+    width: 60%;
+    margin: auto;
+}
+
 #userComments {
     border: 2px solid black;
+    margin-bottom: 20px; /* space between each user comment in commentsList */
 }
 
 #contentComment{
