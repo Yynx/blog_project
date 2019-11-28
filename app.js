@@ -5,7 +5,7 @@ const ejs = require('ejs');
 const BlogPost = require('./src/BlogPost.js').default;
 const Comment = require('./src/Comment.js');
 const File = require('./src/fileHandler.js');
-const sentAnalysis = require('./src/sentiApp.js');
+const sentimentAnalysis = require('./src/sentiApp.js');
 const ml = require('ml-sentiment')();
 const ourComments = require('./public/assets/blogs.json')
 const jsonFilePath = 'public/assets/blogs.json';
@@ -50,7 +50,7 @@ app.get('/sent', (req, res) => {
 
 // Define a route to send json file
 app.get('/info', (req, res) => {
-    const scentedComments = sentAnalysis(ourComments);
+    const scentedComments = sentimentAnalysis(ourComments);
     res.json(scentedComments);
 });
 
