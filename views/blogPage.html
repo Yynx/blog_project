@@ -76,10 +76,10 @@
             </div>
 
             <div id="reactionsBox">
-                <form id="reactionsForm">
-                <input type="image" id="happyReactEmoji" src="/assets/happy.png" alt="happy react">
-                <input type="image" id="neutralReactEmoji" src="/assets/neutral.png" alt="neutral react">
-                <input type="image" id="sadReactEmoji" src="/assets/sad.png" alt="sad react">
+                <form id="reactionsForm" action="<%= '/editPost/react/' + index %>" method="POST">
+                <input type="image" name="happyReact" src="/assets/happy.png" alt="happy react">
+                <input type="image" name="neutralReact" src="/assets/neutral.png" alt="neutral react">
+                <input type="image" name="sadReact" src="/assets/sad.png" alt="sad react">
                 </form>
             </div>
 
@@ -94,7 +94,7 @@
     <!-- addAComment -->
     <div id="addAComment">
         <h3>Add a Comment:</h3>
-        <form id="commentsForm" action="<%= '/editPost/' + index %>" method="POST">
+        <form id="commentsForm" action="<%= '/editPost/comment/' + index %>" method="POST">
             <label for="author">Author:</label>
             <input type="text" id="author" name="author" placeholder="Author (optional)">
             <label for="comment">Add a comment:</label>
