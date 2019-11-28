@@ -2,7 +2,7 @@
 const fs = require('fs');
 const express = require('express');
 const ejs = require('ejs');
-const BlogPost = require('./src/BlogPost.js').default;
+const BlogPost = require('./src/BlogPost.js');
 const Comment = require('./src/Comment.js');
 const File = require('./src/fileHandler.js');
 const sentimentAnalysis = require('./src/sentiApp.js');
@@ -72,7 +72,24 @@ app.post('/submit', (req, res) => {
     }
 });
 
-app.post('/editPost/:index', (req, res) => {
+app.post('/editPost/react/:index', (req,res) =>
+{
+    let happy = 0;
+    let neutral = 0;
+    let sad = 0;
+    let index = req.params.index;
+    if(req.body.hasOwnProperty('happyReact.x')) happy = 1;
+    else if(req.body.hasOwnProperty('neutralReact.x')) neutral = 1;
+    else if(req.body.hasOwnProperty('sadReact.x')) sad = 1;
+    let reaction = {reactions: [happy,neutral,sad]};
+    File.updateReact(jsonFilePath, reaction, index)
+    
+    res.redirect(`/blog/${index}`)
+    
+    
+})
+
+app.post('/editPost/comment/:index', (req, res) => {
     //get the comment
     let content = req.body.comment;
     let author = req.body.author;
@@ -83,7 +100,7 @@ app.post('/editPost/:index', (req, res) => {
     let udpateObj = { comment: comment }
     if (content !== "") {
         //get our array of blogs
-        File.updateBlog(jsonFilePath, udpateObj, index);
+        File.updateComment(jsonFilePath, udpateObj, index);
     }
     res.redirect(`/blog/${index}`)
 });

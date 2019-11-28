@@ -12,12 +12,11 @@ const saveNewBlog = (filePath, jsonObj) =>
 
 const saveFile = (filePath, jsonArray) => {
     //sets id to id of most recent blog post +1
-          
-        newJsonArray = JSON.stringify(jsonArray)
-        fs.writeFile(filePath, newJsonArray, ()=>{});
+            newJsonArray = JSON.stringify(jsonArray)
+            fs.writeFile(filePath, newJsonArray, ()=>{});
 };
 
-const updateBlog = (filePath, udpateObj, id) =>
+const updateComment = (filePath, udpateObj, id) =>
 {
     let newComment = {content: udpateObj.comment.content, time: udpateObj.comment.time, author: udpateObj.comment.author}
     readFile(filePath).then(jsonArray => {
@@ -32,27 +31,52 @@ const updateBlog = (filePath, udpateObj, id) =>
         
          saveFile(filePath, jsonArray);
     })
+    
 };
+
+const updateReact = (filePath, udpateObj, id) =>
+{   console.log(udpateObj)
+    readFile(filePath).then(jsonArray => {
+        for (let obj of jsonArray)
+        {
+             if(obj.id == id)
+             {
+                 for (let index in obj.reactions)
+                 {
+                     obj.reactions[index] += udpateObj.reactions[index];
+                 }
+                
+                 
+             }
+        }
+        console.log('react saved')
+         saveFile(filePath, jsonArray);
+         
+    })
+};
+
 
 //reads file
 const readFile = (filePath) => {
 
     return new Promise(function(resolve, reject) {
-    fs.readFile(filePath, (err, data) =>{
-        let jsonArray;
+    fs.readFile(filePath, "utf-8", (err, data) =>{
+        let jsonArray;  
          try {
-            jsonArray = JSON.parse(data);
+            if(data !== "")
+                jsonArray = JSON.parse(data);
         }
         catch (err) {
-            console.log(err);
-            //unexpected end of json input due to empty json file
-            jsonArray = [];
         }
-        resolve(jsonArray);
+        if(data === "")
+            reject(new Error('no file found'));
+        else 
+            resolve(jsonArray);
+        
     })
 })
 }
 
 
 
-module.exports = {updateBlog, saveNewBlog, readFile, saveFile};
+module.exports = {updateReact, updateComment, saveNewBlog, readFile, saveFile};
