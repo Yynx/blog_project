@@ -126,17 +126,12 @@ app.post('/editPost/comment/:index', (req, res) => {
     for (blogIndex in jsonArray) {
         if (jsonArray[blogIndex].id = index) jsonArray[blogIndex].comments.push(comment);
     }
-    sentimentAnalysis(ourComments);
     res.redirect(`/blog/${index}`)
     //save blogpost to file
     File.saveFile(jsonFilePath, jsonArray);
+    sentimentAnalysis(ourComments);
     res.redirect(`/blog/${index}`);
-
-
-
 });
-
-
 //sentiment start
 // Define a route to send json file
 app.get('/info', (req, res) => {
