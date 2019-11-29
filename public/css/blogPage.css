@@ -23,6 +23,7 @@ body {
     background-color: white;
     width: 60%;
     position: relative; /* set to relative for reactionsBox and reactionsCounter */
+    min-width: 306px;
 }
 
 #content {
@@ -67,10 +68,15 @@ input[type=image] {
 }
 
 #addAComment {
-    margin-top: 50px;
+    margin-top: 90px;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    width: 30%;
+    
+}
+#commentMajor {
+    display: flex;
+    justify-content: center;
 }
 
 #commentsForm {
@@ -85,10 +91,22 @@ input[type=image] {
 }
 
 #userComments {
-    border: 2px solid black;
+    background-color: white;
     margin-bottom: 20px; /* space between each user comment in commentsList */
 }
 
 #contentComment{
     padding: 5px 10px;
+}
+
+#gifContainer {
+    display: flex;
+    border: 2px solid black;
+
+}
+
+#gifImg {
+    max-height: 250px;
+    width: auto;
+    object-fit: cover;
 }
