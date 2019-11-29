@@ -21,7 +21,6 @@ app.use(express.urlencoded());
 //first page render
 app.get('/', (req, res) => {
     jsonArray = File.readFile(jsonFilePath);
-    sentimentAnalysis(ourComments);
     res.render('homepage.html', { blogs: jsonArray });
 });
 
@@ -49,7 +48,6 @@ app.post('/submit', (req, res) => {
         //save blogpost to file
         jsonArray.push(newPost);
         File.saveFile(jsonFilePath, jsonArray);
-        sentimentAnalysis(ourComments);
         res.redirect('/');
     }
 })
@@ -57,7 +55,6 @@ app.post('/submit', (req, res) => {
 
 //blog creation render
 app.get('/create', (req, res) => {
-    sentimentAnalysis(ourComments);
     res.render('form.html');
 });
 
@@ -79,7 +76,6 @@ app.get('/blog/:index', (req, res) => {
     else {
         res.send(`Blog doesn't exist. Please choose an index between 1 and ${jsonArray[jsonArray - 1].id}`);
     }
-    sentimentAnalysis(ourComments);
 });
 
 //handle reaction to blog post
@@ -108,7 +104,8 @@ app.post('/editPost/react/:index', (req, res) => {   //get id of blogpost from i
     }
     //save blogpost to file
     File.saveFile(jsonFilePath, jsonArray);
-    sentimentAnalysis(ourComments);
+    //sentimentAnalysis(ourComments);
+    res.render('/info');
     res.redirect(`/blog/${index}`);
 })
 
@@ -126,10 +123,10 @@ app.post('/editPost/comment/:index', (req, res) => {
     for (blogIndex in jsonArray) {
         if (jsonArray[blogIndex].id = index) jsonArray[blogIndex].comments.push(comment);
     }
-    res.redirect(`/blog/${index}`)
+    res.redirect(`/blog/${index}`);
     //save blogpost to file
     File.saveFile(jsonFilePath, jsonArray);
-    sentimentAnalysis(ourComments);
+    res.render('/info');
     res.redirect(`/blog/${index}`);
 });
 //sentiment start
@@ -139,7 +136,6 @@ app.get('/info', (req, res) => {
 });
 // Send sentiment.html
 app.get('/sent', (req, res) => {
-    sentimentAnalysis(ourComments);
     res.render('sentiment.html');
 });
 // // Define a route to send json file
