@@ -3,12 +3,14 @@ class BlogPost {
         this.id = 1;
         this.title = title;
         this.content = content;
+        this.time = new Date().toLocaleString();
         if (author)
             this.author = author;
         else
             this.author = "anonymous";
         this.comments = [];
         this.reactions = [0, 0, 0];
+        this.gif = "";
     }
 
     addComment(comment, author) {

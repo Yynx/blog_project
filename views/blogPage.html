@@ -55,7 +55,7 @@
     <!-- jumbotron -->
     <div class="jumbotron jumbotron-fluid">
         <div class="jumboContainer">
-            <h1 class="display-4">Anonymous blogs</h1>
+            <h1>Anonymous blogs</h1>
             <p class="lead">Read if you dare...</p>
         </div>
     </div>
@@ -70,9 +70,15 @@
                 <div id="authorBox">
                     <p id="author"><%= data.author %></p>
                 </div>
+                <div id="timeBox">
+                        <p id="time"><%= data.time %></p>
+                </div>
             </div>
             <div id="blogContent">
                 <p id="content"><%= data.content %></p>
+                <div id ="gifContainer">
+                    <img id='gifImg' src="<%= data.gif %>">
+                </div>
             </div>
 
             <div id="reactionsBox">
@@ -92,18 +98,21 @@
     </div>
 
     <!-- addAComment -->
-    <div id="addAComment">
-        <h3>Add a Comment:</h3>
-        <form id="commentsForm" action="<%= '/editPost/comment/' + index %>" method="POST">
-            <label for="author">Author:</label>
-            <input type="text" id="author" name="author" placeholder="Author (optional)">
-            <label for="comment">Add a comment:</label>
-            <textarea type="text" id="comment" name="comment" placeholder="Add a comment here..." maxlength="300"></textarea>
-            <div><span id="remainingChars">300</span> character(s) remaining </div>
-            <button type="submit">Submit</button>
-        </form>
+    <div id="commentMajor">
+
+        <div id="addAComment">
+            <h3>Add a Comment:</h3>
+            <form id="commentsForm" action="<%= '/editPost/comment/' + index %>" method="POST">
+                <label for="author">Name:</label>
+                <input type="text" id="author" name="author" placeholder="Author (optional)">
+                <label for="comment">Add a comment:</label>
+                <textarea type="text" id="comment" name="comment" placeholder="Add a comment here..." maxlength="300" required></textarea>
+                <div><span id="remainingChars">300</span> character(s) remaining </div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        
     </div>
-    
     <!-- commentsList -->
     <div id="commentsList">
         <h3>Comments:</h3>

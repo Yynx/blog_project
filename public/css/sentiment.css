@@ -1,6 +1,6 @@
 body {
   background-color: lightblue;
-  font-family: 'Muli', sans-serif;
+  font-family: "Muli", sans-serif;
   display: flex;
   flex-direction: column;
 }
@@ -18,13 +18,16 @@ body {
   align-items: center;
 }
 
-#commentsHeader, #blogPostsHeader {
+#commentsHeader,
+#blogPostsHeader {
   padding-bottom: 10px;
 }
 
 .commentsSentimentDiv {
+  display: flex;
+  flex-direction: column;
   align-self: center;
-  width: 60%;
+  align-items: center;
 }
 
 .commentsSentimentTable {
@@ -33,28 +36,12 @@ body {
   padding: 2px;
 }
 
-.table {
-  text-align: center;
-  white-space: nowrap;
-  width: 100%;
-}
-
-.table th {
-  padding: 25px;
-  background-color: darkgrey;
-}
-
-.table td {
-  background-color: mistyrose;
-}
-
 .marg {
   margin: 70px 0 0 0; /* spacing between divs */
 }
 
 .blogSentimentDiv {
   align-self: center;
-  width: 60%;
 }
 
 .blogSentimentTable {
@@ -66,7 +53,6 @@ body {
 .table2 {
   text-align: center;
   white-space: nowrap;
-  width: 100%;
 }
 
 .table2 th {
@@ -77,4 +63,11 @@ body {
 
 .table2 td {
   background-color: rgb(233, 211, 208);
+  width: 20%;
+}
+
+@media (max-width: 496px) {
+  h1 {
+    font-size: 30px;
+  }
 }

@@ -1,7 +1,8 @@
 class Comment {
     constructor(content, author) {
         this.content = content;
-        this.time = Date(Date.now).toString();
+        this.time = new Date().toLocaleString();
+        
         if (author)
             this.author = author;
         else
