@@ -8,7 +8,6 @@ const File = require('./src/fileHandler.js');
 const sentimentAnalysis = require('./src/sentiApp.js');
 const ml = require('ml-sentiment')();
 const ourComments = require('./public/assets/blogs.json');
-console.log(ourComments);
 const jsonFilePath = 'public/assets/blogs.json';
 
 //setup for express
@@ -22,7 +21,7 @@ app.use(express.urlencoded());
 //first page render
 app.get('/', (req, res) => {
     jsonArray = File.readFile(jsonFilePath);
-
+    sentimentAnalysis(ourComments);
     res.render('homepage.html', { blogs: jsonArray });
 });
 
@@ -58,6 +57,7 @@ app.post('/submit', (req, res) => {
 
 //blog creation render
 app.get('/create', (req, res) => {
+    sentimentAnalysis(ourComments);
     res.render('form.html');
 });
 
@@ -79,7 +79,7 @@ app.get('/blog/:index', (req, res) => {
     else {
         res.send(`Blog doesn't exist. Please choose an index between 1 and ${jsonArray[jsonArray - 1].id}`);
     }
-
+    sentimentAnalysis(ourComments);
 });
 
 //handle reaction to blog post
