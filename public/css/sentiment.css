@@ -27,8 +27,6 @@ body {
   flex-direction: column;
   align-self: center;
   align-items: center;
-  margin: auto;
-  width: 60%;
 }
 
 .commentsSentimentTable {
@@ -37,32 +35,12 @@ body {
   padding: 2px;
 }
 
-.table {
-  display: flex;
-  flex-wrap: wrap;
-  text-align: center;
-  white-space: nowrap;
-  width: 100%;
-}
-
-.table th {
-  display: flex;
-  padding: 25px;
-  background-color: darkgrey;
-}
-
-.table td {
-  display: flex;
-  background-color: mistyrose;
-}
-
 .marg {
   margin: 70px 0 0 0; /* spacing between divs */
 }
 
 .blogSentimentDiv {
   align-self: center;
-  width: 60%;
 }
 
 .blogSentimentTable {
@@ -75,7 +53,7 @@ body {
   display: flex;
   flex-direction: column;
   text-align: center;
-  white-space: nowrap;
+  /* white-space: nowrap; */
 }
 
 .table2 th {
@@ -86,8 +64,8 @@ body {
 
 .table2 td {
   background-color: rgb(233, 211, 208);
+  width: 20%;
 }
-
 
 @media(max-width: 496px) {
   h1 {
