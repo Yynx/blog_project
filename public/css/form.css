@@ -1,0 +1,97 @@
+body {
+    background-color: lightblue;
+    font-family: 'Muli', sans-serif;
+}
+
+.jumbotron {
+    display: flex;
+    justify-content: center;
+    padding-top: 140px;
+}
+
+.jumboContainer {
+    display: flex;
+    flex-direction: column;
+    /* border: 2px solid black; */
+    align-items: center;
+}
+
+input[type=text], textarea {
+    border-radius: 4px;
+}
+
+.form {
+    padding-top: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.formPadding {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+#submitBox {
+    display:flex;
+    justify-content: center;
+}
+
+.submitButton {
+    margin-top: 20px;
+    width: 30%;
+}
+
+#inputBlogAuthor {
+    width: 30%;
+    height: 35px;
+}
+
+#inputBlogTitle {
+    height: 35px;
+}
+
+#gifBox {
+    height: 310px;
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+/* input name gif display none */
+#gifLink {
+    display: none;
+}
+
+#gifCredits {
+    position: absolute;
+    /* border: 2px solid blue; */
+    align-items: flex-end;
+    bottom: 0;
+    right: 21px;
+    z-index: 1;
+}
+
+#gifSearchBox {
+    justify-content: center;
+    /* border: 2px solid red; */
+    width: 100%;
+    position: relative;
+    height: 310px;
+    /* z-index: -1; */
+}
+
+#imgBox {
+    /* border: 2px solid black; */
+    height: 270px;
+    overflow: auto;
+}
+
+.gif {
+    width: 190px;
+    margin: 10px;
+}

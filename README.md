@@ -178,4 +178,41 @@ Today's goals:
 * Styling for analysis page.
 * Deploy.
 
+## Day 4
+
+### Stand Up
+
+#### Achievements:
+
+Josh:
+
+* Broke the file read/write. Files were written whilst they were trying to be read, which led to reading errors. This was fixed using sync reads and async writing.
+
+Lauren:
+
+* After branches merged, all the css broke. Fixed everybody's css.
+
+Brian: 
+
+* Summarised the scores for the sentiment analysis classifier.
+* Sorted out the PowerPoint.
+
+Dan: 
+
+* Finally fixed the giphy error (constantly firing events on input).
+
+#### Goals for this morning (before submission):
+
+* Make everything responsive.
+* Fixing Josh's mistakes.
+
+
+#### Things we would like to do after submission (if we had time):
+
+* Factoring emoji to word count (api)
+* Adding preview page function before adding a blog post
+* Not refreshing on submission of comments and emoji reactions
+* Factoring in reactions to sentiment analysis
+* Have an error page that links back to the homepage
+
 

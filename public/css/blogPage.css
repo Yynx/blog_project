@@ -1,0 +1,112 @@
+body {
+    background-color: lightblue;
+    font-family: 'Muli', sans-serif;
+}
+
+.jumbotron {
+    display: flex;
+    justify-content: center;
+    padding-top: 140px;
+}
+
+.jumboContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#blogContainer {
+    display: flex;
+    margin: auto;
+    padding: 30px;
+    margin-top: 80px;
+    background-color: white;
+    width: 60%;
+    position: relative; /* set to relative for reactionsBox and reactionsCounter */
+    min-width: 306px;
+}
+
+#content {
+    padding-top: 20px;
+}
+
+#reactionsBox {
+    display: flex;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: grey;
+    width: 200px;
+    height: 40px;
+    position: absolute; /* set in relation to blogContainer */ 
+    right: -20px; /* shifts emoji reaction box right 20px; */
+    bottom: -20px; /* shifts emoji box down 20px; */
+    justify-content: space-evenly; /* spaces emoji reactions evenly */
+}
+
+#reactionsForm {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: inherit;
+}
+
+#reactionsCounter {
+    display: flex;
+    /* border: 1px solid black; */
+    border-radius: 5px;
+    width: 200px;
+    height: 40px;
+    position: absolute; /* set in relation to blogContainer */ 
+    right: -35px; /* shifts emoji counter box right */
+    bottom: -50px; /* shifts emoji counter box down */
+    justify-content: space-evenly; /* spaces emoji reactions evenly */
+    color: red;
+}
+
+input[type=image] {
+    object-fit: contain; /* makes emoji image inputs in the form fit the container */
+}
+
+#addAComment {
+    margin-top: 90px;
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    
+}
+#commentMajor {
+    display: flex;
+    justify-content: center;
+}
+
+#commentsForm {
+    display: flex;
+    flex-direction: column;
+}
+
+#commentsList {
+    padding-top: 50px;
+    width: 60%;
+    margin: auto;
+}
+
+#userComments {
+    background-color: white;
+    margin-bottom: 20px; /* space between each user comment in commentsList */
+}
+
+#contentComment{
+    padding: 5px 10px;
+}
+
+#gifContainer {
+    display: flex;
+    border: 2px solid black;
+
+}
+
+#gifImg {
+    max-height: 250px;
+    width: auto;
+    object-fit: cover;
+}

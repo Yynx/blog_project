@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- css -->
+    <link rel="stylesheet" href="/css/blogPage.css" type="text/css">
+    <!-- axios -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+    <!-- jQuery -->
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+    <!-- more bootstrap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- javascript -->
+    <script src="/js/blogPage.js"></script>
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
+
+    <title>Viewing post</title>
+</head>
+
+<body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
+        <a class="navbar-brand" href="/">
+            <img src="/assets/logo.png" width="30" height="30" class="d-inline-block align-top" alt="anonyblog logo">
+            Anonyblog
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="navbar-nav active">
+                    <a class="nav-link" href="/create">Upload</a>
+                </li>
+                <li class="navbar-nav">
+                    <a class="nav-link" href="/sent">Analysis</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- jumbotron -->
+    <div class="jumbotron jumbotron-fluid">
+        <div class="jumboContainer">
+            <h1>Anonymous blogs</h1>
+            <p class="lead">Read if you dare...</p>
+        </div>
+    </div>
+
+    <!-- blogContainer -->
+    <div id="blogContainer">
+        <div id="blogBox">
+            <div id="blogHeader">
+                <div id="titleBox">
+                    <h3 id="title"><%= data.title %></h3>
+                </div>
+                <div id="authorBox">
+                    <p id="author"><%= data.author %></p>
+                </div>
+                <div id="timeBox">
+                        <p id="time"><%= data.time %></p>
+                </div>
+            </div>
+            <div id="blogContent">
+                <p id="content"><%= data.content %></p>
+                <div id ="gifContainer">
+                    <img id='gifImg' src="<%= data.gif %>">
+                </div>
+            </div>
+
+            <div id="reactionsBox">
+                <form id="reactionsForm" action="<%= '/editPost/react/' + index %>" method="POST">
+                <input type="image" name="happyReact" src="/assets/happy.png" alt="happy react">
+                <input type="image" name="neutralReact" src="/assets/neutral.png" alt="neutral react">
+                <input type="image" name="sadReact" src="/assets/sad.png" alt="sad react">
+                </form>
+            </div>
+
+            <div id="reactionsCounter">
+                    <p id="happyCounter"><%= data.reactions[0] %></p>
+                    <p id="neutralCounter"><%= data.reactions[1] %></p>
+                    <p id="sadCounter"><%= data.reactions[2] %></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- addAComment -->
+    <div id="commentMajor">
+
+        <div id="addAComment">
+            <h3>Add a Comment:</h3>
+            <form id="commentsForm" action="<%= '/editPost/comment/' + index %>" method="POST">
+                <label for="author">Name:</label>
+                <input type="text" id="author" name="author" placeholder="Author (optional)">
+                <label for="comment">Add a comment:</label>
+                <textarea type="text" id="comment" name="comment" placeholder="Add a comment here..." maxlength="300" required></textarea>
+                <div><span id="remainingChars">300</span> character(s) remaining </div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        
+    </div>
+    <!-- commentsList -->
+    <div id="commentsList">
+        <h3>Comments:</h3>
+            <p class="numOfComments"><%= data.comments.length %> comment(s)</p>
+            <!-- start of for loop -->
+            <% for(var i= data.comments.length-1; i>=0; i--) { %>
+            <div id="userComments">
+                    <p id="contentComment"><%= data.comments[i].author + ": " + data.comments[i].content %></p>
+                    <p id="contentComment"><%= data.comments[i].time %></p>
+            </div>
+            <% } %>
+            <!-- end of for loop -->
+    </div>
+        
+        <!-- <div>Icons made by <a href="https://www.flaticon.com/authors/roundicons" title="Roundicons">Roundicons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
+</body>
+
+</html>

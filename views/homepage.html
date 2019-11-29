@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- css -->
+    <link rel="stylesheet" href="/css/homepage.css" type="text/css">
+    <!-- jQUery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- more bootstrap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
+    <title>Home</title>
+</head>
+
+<body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
+        <a class="navbar-brand" href="/">
+            <img src="/assets/logo.png" href="/" width="30" height="30" class="d-inline-block align-top" alt="anonyblog logo">
+            Anonyblog
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" href="/">Home</a>
+                </li>
+                <li class="navbar-nav">
+                    <a class="nav-link" href="/create">Upload</a>
+                </li>
+                <li class="navbar-nav">
+                    <a class="nav-link" href="/sent">Analysis</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- jumbotron -->
+    <div class="jumbotron jumbotron-fluid">
+        <div class="jumboContainer">
+            <!-- <img id="logo" src="/assets/logo.png" alt="anonyblog logo"> -->
+            <h1>Anonymous blogs</h1>
+            <p class="lead">Read if you dare...</p>
+        </div>
+    </div>
+
+    <!-- blog posts start here -->
+
+    <% for(var i=blogs.length-1; i>=0; i--) { %>
+    <div class="blogPost container">
+        <div class="blogPostTitle">
+            <h3 class="blogPostH3"><a href="<%= '/blog/' + blogs[i].id %>"><%= blogs[i].title %></a></h3>
+        </div>
+        <div class="blogPostTextarea">
+            <p class="blogPostP"><%= blogs[i].author %></p>
+        </div>
+        <div class="blogPostTextarea">
+                <p class="blogPostP"><%= blogs[i].time %></p>
+            </div>
+        <div class="blogPostTextarea">
+            <p class="blogPostP"><a href="<%= '/blog/' + blogs[i].id %>"><%= blogs[i].content %></a></p>
+        </div>
+        <div class="commentsAndEmojiDiv">
+            <div class="emojiBox">
+            <img src="/assets/happy.png">
+            <img src="/assets/neutral.png">
+            <img src="/assets/sad.png">
+            </div>
+            <div class="commentsBox">
+            <%= blogs[i].comments.length %> comment(s)
+            </div>
+            <div class="reactionsCount">
+                <p><%= blogs[i].reactions[0] %></p>
+                <p><%= blogs[i].reactions[1] %></p>
+                <p><%= blogs[i].reactions[2] %></p>
+            </div>
+        </div>
+    </div>
+    <% } %>
+
+
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+body {
+    background-color: lightblue;
+    font-family: 'Muli', sans-serif;
+}
+
+.jumbotron {
+    display: flex;
+    justify-content: center;
+    padding-top: 140px;
+}
+
+.jumboContainer {
+    display: flex;
+    flex-direction: column;
+    /* border: 2px solid black; */
+    align-items: center;
+}
+
+.blogPostP {
+    overflow: hidden; /* elipsis */
+    white-space: nowrap; /* elipsis */
+    text-overflow: ellipsis; /*  elipsis */
+}
+
+.blogPost {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    box-shadow: 5px 10px 18px rgba(38, 57, 63, 0.3);
+    padding: 30px;
+    margin-top: 80px; /* space between different blog posts */
+}
+
+.blogPost:hover {
+    border: 1px solid white;
+    border-radius: 5px;
+    box-shadow: 5px 10px 18px grey;
+}
+
+a:hover {
+    text-decoration: none; /* removes underline when hovering over links */
+    color: purple;
+}
+
+a {
+    text-decoration: none;
+    color: #212529;
+}
+
+.commentsAndEmojiDiv {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+}
+
+.emojiBox {
+    display: flex;
+    justify-content: space-evenly;
+    /* background-color: green; */
+    width: 180px;
+}
+
+.reactionsCount {
+    display: flex;
+    justify-content: right;
+    width: 200px;
+    height: 40px;
+    position: absolute;
+    right: 100px; /* shifts emoji counter box right */
+    bottom: -30px; /* shifts emoji counter box down */
+    justify-content: space-evenly; /* spaces emoji reactions evenly */
+    color: red;
+}
+
+.commentsBox {
+    /* background-color: purple; */
+    display: flex;
+    width: 130px;
+    align-items: center;
+}
