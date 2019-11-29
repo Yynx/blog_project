@@ -139,6 +139,7 @@ app.get('/info', (req, res) => {
 });
 // Send sentiment.html
 app.get('/sent', (req, res) => {
+    sentimentAnalysis(ourComments);
     res.render('sentiment.html');
 });
 // // Define a route to send json file
