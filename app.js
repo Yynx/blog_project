@@ -31,6 +31,7 @@ app.post('/submit', (req, res) => {
     let title = req.body.title;
     let content = req.body.content;
     let author = req.body.author;
+    let gif = req.body.gif;
     //error handling for empty blog posts
     if (title !== "" && content !== "") {
         let newPost = new BlogPost(
@@ -38,7 +39,9 @@ app.post('/submit', (req, res) => {
             content,
             author
         );
-        jsonArray = File.readFile2(jsonFilePath);
+        newPost.gif = gif;
+        jsonArray = File.readFile(jsonFilePath);
+        newPost.id = jsonArray[jsonArray.length -1].id +1;
         jsonArray.push(newPost);
         File.saveFile(jsonFilePath,jsonArray);
         res.redirect('/');

@@ -9,6 +9,7 @@ class BlogPost {
             this.author = "anonymous";
         this.comments = [];
         this.reactions = [0, 0, 0];
+        this.gif = "";
     }
 
     addComment(comment, author) {
