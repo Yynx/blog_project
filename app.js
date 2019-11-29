@@ -12,7 +12,7 @@ const jsonFilePath = 'public/assets/blogs.json';
 
 //setup for express
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 app.engine('html', ejs.renderFile);
 app.use(express.static('public'));
 app.use(express.static('views'));
@@ -22,13 +22,13 @@ app.use(express.urlencoded());
 app.get('/', (req, res) => {
     jsonArray = File.readFile(jsonFilePath);
 
-     res.render('homepage.html', { blogs: jsonArray });
+    res.render('homepage.html', { blogs: jsonArray });
 });
 
 
 //submit a new blogpost
 app.post('/submit', (req, res) => {
-   
+
     //building blog post
     let title = req.body.title;
     let content = req.body.content;
@@ -45,10 +45,10 @@ app.post('/submit', (req, res) => {
         //read blog post array from file
         jsonArray = File.readFile(jsonFilePath);
         //set id of blogpost
-        newPost.id = jsonArray[jsonArray.length -1].id +1;
+        newPost.id = jsonArray[jsonArray.length - 1].id + 1;
         //save blogpost to file
         jsonArray.push(newPost);
-        File.saveFile(jsonFilePath,jsonArray);
+        File.saveFile(jsonFilePath, jsonArray);
         res.redirect('/');
     }
 })
@@ -63,56 +63,51 @@ app.get('/create', (req, res) => {
 app.get('/blog/:index', (req, res) => {
     //get id of blogpost from index
     let index = req.params.index;
-        //read blog post array from file
-        jsonArray = File.readFile(jsonFilePath);
-        //find blogPost from array via index 
-        let currBlog;
-        for(blog of jsonArray)
-        {
-            if(blog.id = index)  currBlog = blog;                         
-        }
-        //check if this blog exists before rendering
-        if (index > 0 && index <= jsonArray[jsonArray.length-1].id) {
-            res.render("blogPage.html", { data: currBlog, index: index });
-        }
-        else {
-            res.send(`Blog doesn't exist. Please choose an index between 1 and ${jsonArray[jsonArray-1].id}`);
-        }
+    //read blog post array from file
+    jsonArray = File.readFile(jsonFilePath);
+    //find blogPost from array via index 
+    let currBlog;
+    for (blog of jsonArray) {
+        if (blog.id = index) currBlog = blog;
+    }
+    //check if this blog exists before rendering
+    if (index > 0 && index <= jsonArray[jsonArray.length - 1].id) {
+        res.render("blogPage.html", { data: currBlog, index: index });
+    }
+    else {
+        res.send(`Blog doesn't exist. Please choose an index between 1 and ${jsonArray[jsonArray - 1].id}`);
+    }
 
 });
 
 //handle reaction to blog post
-app.post('/editPost/react/:index', (req,res) =>
-{   //get id of blogpost from index
+app.post('/editPost/react/:index', (req, res) => {   //get id of blogpost from index
     let index = req.params.index;
     //build reaction array
     let happy = 0;
     let neutral = 0;
     let sad = 0;
-    if(req.body.hasOwnProperty('happyReact.x')) happy = 1;
-    else if(req.body.hasOwnProperty('neutralReact.x')) neutral = 1;
-    else if(req.body.hasOwnProperty('sadReact.x')) sad = 1;
-    let reactions = [happy,neutral,sad];
-    
+    if (req.body.hasOwnProperty('happyReact.x')) happy = 1;
+    else if (req.body.hasOwnProperty('neutralReact.x')) neutral = 1;
+    else if (req.body.hasOwnProperty('sadReact.x')) sad = 1;
+    let reactions = [happy, neutral, sad];
+
     //read blog post array from file
     jsonArray = File.readFile(jsonFilePath);
 
     //find blogPost from array via index  and update reactions
     let currBlog;
-        for(blogIndex in jsonArray)
-        {
-            if(jsonArray[blogIndex].id = index)  
-            {
-                for (i in reactions)
-                {
+    for (blogIndex in jsonArray) {
+        if (jsonArray[blogIndex].id = index) {
+            for (i in reactions) {
                 jsonArray[blogIndex].reactions[i] += reactions[i];
-                }
-            }                        
+            }
         }
+    }
     //save blogpost to file
-    File.saveFile(jsonFilePath,jsonArray);
-    res.redirect(`/blog/${index}`); 
-    
+    File.saveFile(jsonFilePath, jsonArray);
+    res.redirect(`/blog/${index}`);
+
 })
 
 app.post('/editPost/comment/:index', (req, res) => {
@@ -122,20 +117,19 @@ app.post('/editPost/comment/:index', (req, res) => {
     let content = req.body.comment;
     let author = req.body.author;
     let comment = new Comment(content, author);
-     //read blog post array from file
+    //read blog post array from file
     jsonArray = File.readFile(jsonFilePath);
     //find blogPost from array via index and update comments
     let currBlog;
-        for(blogIndex in jsonArray)
-        {
-            if(jsonArray[blogIndex].id = index)  jsonArray[blogIndex].comments.push(comment);                         
-        }
+    for (blogIndex in jsonArray) {
+        if (jsonArray[blogIndex].id = index) jsonArray[blogIndex].comments.push(comment);
+    }
     //save blogpost to file
-    File.saveFile(jsonFilePath,jsonArray);
+    File.saveFile(jsonFilePath, jsonArray);
     res.redirect(`/blog/${index}`);
-  
-    
-   
+
+
+
 });
 
 
