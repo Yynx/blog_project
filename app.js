@@ -7,7 +7,8 @@ const Comment = require('./src/Comment.js');
 const File = require('./src/fileHandler.js');
 const sentimentAnalysis = require('./src/sentiApp.js');
 const ml = require('ml-sentiment')();
-const ourComments = require('./public/assets/blogs.json')
+const ourComments = require('./public/assets/blogs.json');
+console.log(ourComments);
 const jsonFilePath = 'public/assets/blogs.json';
 
 //setup for express
@@ -48,13 +49,7 @@ app.get('/sent', (req, res) => {
     res.render('sentiment.html');
 });
 
-// Define a route to send json file
-app.get('/info', (req, res) => {
-    const scentedComments = sentimentAnalysis(ourComments);
-    res.json(scentedComments);
-});
-
-//when for"m data is submitted
+//when form data is submitted
 app.post('/submit', (req, res) => {
 
     let title = req.body.title;
@@ -68,25 +63,25 @@ app.post('/submit', (req, res) => {
             author
         );
         File.saveNewBlog(jsonFilePath, newPost);
+        let sentedCom = sentimentAnalysis(ourComments);
         res.redirect(`/`);
     }
 });
 
-app.post('/editPost/react/:index', (req,res) =>
-{
+app.post('/editPost/react/:index', (req, res) => {
     let happy = 0;
     let neutral = 0;
     let sad = 0;
     let index = req.params.index;
-    if(req.body.hasOwnProperty('happyReact.x')) happy = 1;
-    else if(req.body.hasOwnProperty('neutralReact.x')) neutral = 1;
-    else if(req.body.hasOwnProperty('sadReact.x')) sad = 1;
-    let reaction = {reactions: [happy,neutral,sad]};
+    if (req.body.hasOwnProperty('happyReact.x')) happy = 1;
+    else if (req.body.hasOwnProperty('neutralReact.x')) neutral = 1;
+    else if (req.body.hasOwnProperty('sadReact.x')) sad = 1;
+    let reaction = { reactions: [happy, neutral, sad] };
     File.updateReact(jsonFilePath, reaction, index)
-    
+    sentimentAnalysis(ourComments);
     res.redirect(`/blog/${index}`)
-    
-    
+
+
 })
 
 app.post('/editPost/comment/:index', (req, res) => {
@@ -102,7 +97,13 @@ app.post('/editPost/comment/:index', (req, res) => {
         //get our array of blogs
         File.updateComment(jsonFilePath, udpateObj, index);
     }
+    sentimentAnalysis(ourComments);
     res.redirect(`/blog/${index}`)
+});
+
+// Define a route to send json file
+app.get('/info', (req, res) => {
+    res.json(sentimentAnalysis(ourComments));
 });
 
 app.listen(port, () => console.log(`Listening on ${port}`));
